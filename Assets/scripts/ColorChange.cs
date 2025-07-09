@@ -19,12 +19,12 @@ public class ColorChange : MonoBehaviour
         //아래 코드와 동일함
         //GetComponent<Renderer>().material.color = Color.red;
 
-        transform.position = new Vector3(100, 20, -50); // 위치 이동
+        transform.position = new Vector3(100, 20, -50); // 위치 이동 game play 버튼을 누르면 위치가 이동하고 색깔이 보라색으로 변함
     }
 
     // Update is called once per frame
     void Update()
     {
-        rend.material.color = Color.purple;
+        rend.material.color = Color.purple; // game play 버튼을 누르면 위치가 이동하고 색깔이 보라색으로 변함
     }
 }
