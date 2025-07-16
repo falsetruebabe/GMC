@@ -1,10 +1,10 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
-// want: ³»°¡ ÁöÁ¤ÇÑ ¹æÇâÀ¸·Î ÀÌµ¿ == positionÀÇ °ªÀÌ º¯ÇÔ
+// want: ë‚´ê°€ ì§€ì •í•œ ë°©í–¥ìœ¼ë¡œ ì´ë™ == positionì˜ ê°’ì´ ë³€í•¨
 public class SlmpleMove : MonoBehaviour
 {
-    // ÀÌµ¿ ½Ã »ç¿ë ÀÚ·áÇü - float: ½Ç¼ö, Vector3: º¤ÅÍ(x,y,z)
-    public Vector3 dir = new Vector3(0, 0, 1); // front¸¦ ÀÇ¹ÌÇÏ´Â z:1
+    // ì´ë™ ì‹œ ì‚¬ìš© ìë£Œí˜• - float: ì‹¤ìˆ˜, Vector3: ë²¡í„°(x,y,z)
+    public Vector3 dir = new Vector3(0, 0, 1); // frontë¥¼ ì˜ë¯¸í•˜ëŠ” z:1
     public float speed = 1.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,28 +16,28 @@ public class SlmpleMove : MonoBehaviour
     void Update()
     {
 
-        // want: ³»°¡ ÀÔ·ÂÇÑ ¹æÇâÀ¸·Î ÀÌµ¿
-        float h = Input.GetAxis("Horizontal"); // a(-1) or d(+1)¸¦ ´©¸¦ ¶§ 
-        float v = Input.GetAxis("Vertical"); // s(-1) or w(+1)¸¦ ´©¸¦ ¶§ 
+        // want: ë‚´ê°€ ì…ë ¥í•œ ë°©í–¥ìœ¼ë¡œ ì´ë™
+        float h = Input.GetAxis("Horizontal"); // a(-1) or d(+1)ë¥¼ ëˆ„ë¥¼ ë•Œ 
+        float v = Input.GetAxis("Vertical"); // s(-1) or w(+1)ë¥¼ ëˆ„ë¥¼ ë•Œ 
 
         dir = new Vector3(h, 0, v);
 
-        // Á¤±ÔÈ­ Normalize == º¤ÅÍÀÇ ±æÀÌ¸¦ 1·Î ¹æÇâÀ» À¯ÁöÇÏ¸é¼­ º¤ÅÍÀÇ ±æÀÌ¸¦ 1·Î °íÁ¤
+        // ì •ê·œí™” Normalize == ë²¡í„°ì˜ ê¸¸ì´ë¥¼ 1ë¡œ ë°©í–¥ì„ ìœ ì§€í•˜ë©´ì„œ ë²¡í„°ì˜ ê¸¸ì´ë¥¼ 1ë¡œ ê³ ì •
         dir.Normalize();
 
-        // À§Ä¡¸¦ °è¼ÓÇØ¼­ º¯°æ 
-        // P(»õ À§Ä¡) = p0(±âÁ¸ À§Ä¡) + v(¹æÇâ) * t(½Ã°£) 
-        // =(µîÈ£) ±âÁØ L: ´ëÀÔ R: °ªÀ» ¹Ş¾Æ¿È // ¹æÇâÀ» ´õÇØ¼­ updateÇØÁÜ == xÃàÀ¸·Î += 1f
+        // ìœ„ì¹˜ë¥¼ ê³„ì†í•´ì„œ ë³€ê²½ 
+        // P(ìƒˆ ìœ„ì¹˜) = p0(ê¸°ì¡´ ìœ„ì¹˜) + v(ë°©í–¥) * t(ì‹œê°„) 
+        // =(ë“±í˜¸) ê¸°ì¤€ L: ëŒ€ì… R: ê°’ì„ ë°›ì•„ì˜´ // ë°©í–¥ì„ ë”í•´ì„œ updateí•´ì¤Œ == xì¶•ìœ¼ë¡œ += 1f
         transform.position += dir * speed * Time.deltaTime;
         // == transform.position = transform.position + dir;
-        // dir == new Vector3(1f /* floatÇüÀÇ ¼ıÀÚÀÓÀ» ¸í½Ã */, 0, 0);
+        // dir == new Vector3(1f /* floatí˜•ì˜ ìˆ«ìì„ì„ ëª…ì‹œ */, 0, 0);
         // == transform.Translate(dir * speed * Time.deltaTime); 
-        // want: ³»°¡ ÁöÁ¤ÇÑ ¹æÇâÀ¸·Î ÀÌµ¿
+        // want: ë‚´ê°€ ì§€ì •í•œ ë°©í–¥ìœ¼ë¡œ ì´ë™
     }
 }
 
 /* dev note
- * Update ÇÔ¼ö¿¡´Ù°¡ transform.position Àû°ÔµÇ¸é transform º¯°æ X(°íÁ¤)
- * but Start¿¡´Ù°¡ ¾²¸é transform º¯°æ O 
- * a(»õ ÁÂÇ¥°ª) = p(ÇöÀç À§Ä¡) + vt(¼Óµµ==¹æÇâ*½Ã°£)
+ * Update í•¨ìˆ˜ì—ë‹¤ê°€ transform.position ì ê²Œë˜ë©´ transform ë³€ê²½ X(ê³ ì •)
+ * but Startì—ë‹¤ê°€ ì“°ë©´ transform ë³€ê²½ O 
+ * a(ìƒˆ ì¢Œí‘œê°’) = p(í˜„ì¬ ìœ„ì¹˜) + vt(ì†ë„==ë°©í–¥*ì‹œê°„)
  */
