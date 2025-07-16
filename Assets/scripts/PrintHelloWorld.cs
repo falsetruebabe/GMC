@@ -1,36 +1,31 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PrintHelloWorld : MonoBehaviour
 {
-    //int Main()
-    //{
-    //    return 1 + 1;
-    //}
 
-    /***
-    * Start is called once before the first execution of Update after the MonoBehaviour is created 
-    * Start button ´©¸£¸é µü ÇÑ ¹ø¸¸ ½ÇÇàÇÔ 
-    * i.e. Hello World ¸¦ ÇÃ·¹ÀÌ¹öÆ° ´©¸£¸é ÇÑ¹ø¸¸ ½ÇÇàÇÑ´Ù´Â ¸»À» Á÷¿ªÇÑ °ÅÀÓ 
-    * ÃÊ±âÈ­: ÃÊ±â °ª ¼ÂÆÃ (¿¡ ¸¹ÀÌ ¾²ÀÓ)
-    ***/
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        print("Hello World!");
+        //ì´ˆê¸°í™” : ì´ˆê¸° ê°’ ì…‹íŒ…
+        // ì£¼ì„ : ë¬¸ìëŠ” "" ìŒë”°ì˜´í‘œë¡œ ê°ì‹¼ë‹¤. 
+        // printëŠ” ê¸€ì”¨ë¥¼ ì¶œë ¥í•´ì£¼ëŠ” ê¸°ëŠ¥ì´ë‹¤.
 
-        int num1 = 1; // num 1 & 2 is º¯¼ö(var)
-        int num2 = 2;
-        print(num1 + num2);
+        int number1 = 1; //ë³€ìˆ˜
+        int number2 = 2; //ë³€ìˆ˜
 
-        Color apple = Color.red; // apple is red
+        print(number1 + number2);
+
+
+
+        // apple is red.
+        Color apple = Color.red;
+
     }
 
-    /*** 
-    * Update is called once per frame 
-    * i.e. ¾÷µ¥ÀÌÆ®´Â frame ´ç 1¹ø Ãâ·Â 
-    * ÁøÇàÁßÀÎ °ªÀÇ º¯È­¸¦ °è»ê
-    ***/
+    // Update is called once per frame
     void Update()
     {
-        print(1 + 1);
+        // ì§„í–‰ì¤‘ì— ê°’ì˜ ë³€í™”ë¥¼ ê³„ì‚°
+        //print("1+1");
     }
 }

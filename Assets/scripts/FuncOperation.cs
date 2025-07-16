@@ -1,24 +1,16 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class FuncOperation : MonoBehaviour
 {
-    // º¯¼ö Å¸ÀÔ(int) º¯¼ö¸í(num) = ÃÊ±â°ª(0);
-    public int num1 = 3; // public == °ø°³
-    private int num2 = 2; // (private == ºñ°ø°³) »ı·«°¡´É i.e. ¼±ÅÃ»çÇ×
-    int result = 0;
+    //ë³€ìˆ˜ íƒ€ì…(int) ë³€ìˆ˜ëª…(number1) = ì´ˆê¸°ê°’(0);
+    public int number1 = 3; //public ê³µê°œ
+    private int number2 = 2;    //private ë¹„ê³µê°œ
+    int result = 0; 
 
-    /* ¹İÈ¯Çü(void) ÇÔ¼ö¸í(Add) () {}
-     * ¹İÈ¯Çü¿¡¼­ void ÀÌ¿Ü¿¡ e.g. int °°Àº °Å ¾²¸é ¹«Á¶°Ç return °ª »ç¿ëÇØ¾ßµÊ
-     *  + º¯¼ö¸íÀº Ã¹±ÛÀÚ ¼Ò¹®ÀÚ ÇÔ¼ö¸íÀº Ã¹±ÛÀÚ ´ë¹®ÀÚ·Î ÇÏÀÚ°í ÇÏ±äÇÏ´Âµ¥ ³ª¶û Á¸³ª ¾È¸ÂÀ½
-     */
-    //void Add() // µ¡¼À ÇÔ¼ö 
-    //{
-    //    result = num1 + num2;
-    //}
-
-    int add()
+    //ë°˜í™˜í˜•(void) í•¨ìˆ˜ì´ë¦„(Add) () { }
+    int Add()  //ë§ì…ˆ í•¨ìˆ˜
     {
-        result = num1 + num2;
+        result = number1 + number2;
         return result;
     }
 
@@ -26,7 +18,7 @@ public class FuncOperation : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        print(add());
+        print(Add());
     }
 
     // Update is called once per frame

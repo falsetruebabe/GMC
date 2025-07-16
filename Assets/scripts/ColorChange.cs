@@ -1,30 +1,25 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
-// ÄÃ·¯¸¦ ¹Ù²Ù°í ½Í´Ù.
+
+// ì»¬ëŸ¬ë¥¼ ë°”ê¾¸ê³  ì‹¶ë‹¤.
 public class ColorChange : MonoBehaviour
 {
-
-    Renderer rend;
-
+    Renderer rend; //ë Œë”ëŸ¬ ì»´í¬ë„ŒíŠ¸
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        /***
-         * ³»°¡(Game Object) °¡Áö°í ÀÖ´Â ·£´õ·¯(mesh Renderer)¸¦ º¯¼ö¿¡ ´ã¾Æ¶ó
-         * ·£´õ·¯°¡ °¡Áö°í ÀÖ´Â ¸ÓÅÍ¸®¾óÀÇ ÄÃ·¯¸¦ red·Î ¹Ù²ã¶ó
-         ***/
-
+        //ë‚´ê°€(gameobject) ê°€ì§€ê³  ìˆëŠ” ë Œë”ëŸ¬(mesh renderer)ë¥¼ ë³€ìˆ˜ì— ë‹´ì•„ì¤˜!
         rend = GetComponent<Renderer>();
+        //ë Œë”ëŸ¬ê°€ ê°€ì§€ê³ ìˆëŠ” ë¨¸í‹°ë¦¬ì–¼ì˜ ì»¬ëŸ¬ë¥¼ ë¹¨ê°•ìœ¼ë¡œ ë°”ê¿”ì¤˜.
         rend.material.color = Color.red;
-        //¾Æ·¡ ÄÚµå¿Í µ¿ÀÏÇÔ
-        //GetComponent<Renderer>().material.color = Color.red;
-
-        transform.position = new Vector3(100, 20, -50); // À§Ä¡ ÀÌµ¿ game play ¹öÆ°À» ´©¸£¸é À§Ä¡°¡ ÀÌµ¿ÇÏ°í »ö±òÀÌ º¸¶ó»öÀ¸·Î º¯ÇÔ
+        transform.position = new Vector3(100, 20, -50);    
+        rend.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        rend.material.color = Color.purple; // game play ¹öÆ°À» ´©¸£¸é À§Ä¡°¡ ÀÌµ¿ÇÏ°í »ö±òÀÌ º¸¶ó»öÀ¸·Î º¯ÇÔ
+        rend.material.color = Color.purple;
     }
 }
